@@ -74,9 +74,6 @@
 //   $('#success').html('');
 // });
 
-
-<script>
-
 //update this with your $form selector
 
 var form_id = "contactForm";
@@ -120,4 +117,3 @@ var $form = $("#" + form_id);
 $form.submit(function( event ) {
     event.preventDefault();
 });
-</script>
