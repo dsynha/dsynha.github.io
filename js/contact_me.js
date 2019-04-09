@@ -98,7 +98,7 @@ function onError(error) {
 
 var sendButton = $("#" + form_id + " [name='send']");
 
-function send() {
+function send(e) {
     e.preventDefault();
     sendButton.val('Sending…');
     sendButton.prop('disabled',true);
