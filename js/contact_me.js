@@ -82,10 +82,11 @@ var data = {
     "access_token": "nhf3mowb3kyr66kyyylpg272"
 };
 
-function onSuccess() {
+function onSuccess(e) {
     // remove this to avoid redirect
     // window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
     // alert("Mensagem enviada com sucesso!");
+    e.preventDefault();
     $("#modal-mensagem-sucesso").modal();
 }
 
@@ -93,13 +94,13 @@ function onError(error) {
     // remove this to avoid redirect
     // window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
     // alert("Ops! Algo deu errado. Favor tentar novamente.");
+    error.preventDefault();
     $("#modal-mensagem-erro").modal();
 }
 
 var sendButton = $("#" + form_id + " [name='send']");
 
-function send(e) {
-    e.preventDefault();
+function send() {
     sendButton.val('Sending…');
     sendButton.prop('disabled',true);
 
