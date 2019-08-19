@@ -85,13 +85,15 @@ var data = {
 function onSuccess() {
     // remove this to avoid redirect
     // window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
-    // alert("Mensagem enviada com sucesso!");
+     alert("Mensagem enviada com sucesso!");
+     sendButton.prop('disabled',false);
 }
 
 function onError(error) {
     // remove this to avoid redirect
     // window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
-    // alert("Ops! Algo deu errado. Favor tentar novamente.");
+     alert("Ops! Algo deu errado. Favor tentar novamente.");
+     sendButton.prop('disabled',false);
 }
 
 var sendButton = $("#" + form_id + " [name='send']");
